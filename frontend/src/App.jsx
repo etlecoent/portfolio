@@ -2,7 +2,6 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
 
 import NavBar from "./containers/NavBar.jsx";
@@ -13,7 +12,19 @@ function App() {
     <NavBar />
     <Router>
       <Switch>
-        <Route />
+        {/* <Route exact path="/">
+          <Home/>
+        </Route> */}
+        {/* <Route path="/">
+          <Home />
+        </Route> */}
+        {/* <Route path="/">
+          <Home />
+        </Route> */}
+        {/* <Route path="*">
+          <404 />
+        </Route> */}
+        
       </Switch>
     </Router>
     </>
