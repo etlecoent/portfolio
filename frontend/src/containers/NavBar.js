@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
+import logo from "../images/logo.png"
+
 const NavBar = (props) => {
   
   const [isOpen, setIsOpen] = useState(false);
@@ -12,7 +14,7 @@ const NavBar = (props) => {
         <div className="flex items-center justify-between h-16">
           <div className="w-full justify-between flex items-center">
             <a className="flex-shrink-0" href="/">
-              <img className="h-8 w-8" src="/icons/rocket.svg" alt="Workflow"/>
+              <img className="h-8 w-8" src={logo} alt="logo"/>
             </a>
             <div className="hidden md:block">
               <div className="ml-10 flex items-baseline space-x-4">
