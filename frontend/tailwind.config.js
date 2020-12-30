@@ -8,10 +8,17 @@ module.exports = {
   },
   purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
   theme: {
+    extend: {
+      backgroundImage: theme => ({
+        'ysosb': "url('./images/y-so-serious.png')",
+        'ysosw': "url('./images/y-so-serious-white.png')",
+      })
+    }
   },
   variants: {
     extend: {
       backgroundColor: ["checked"],
+      backgroundImage: ["dark"],
       borderColor: ["checked"],
       inset: ["checked"],
       zIndex: ["hover", "active"],

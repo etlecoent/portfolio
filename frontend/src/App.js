@@ -7,6 +7,7 @@ import {
 import { useDarkMode } from "./hooks/useDarkMode";
 
 import NavBar from "./containers/NavBar";
+import Page404 from "./containers/Page404";
 import Footer from "./containers/Footer";
 
 
@@ -25,9 +26,9 @@ function App() {
         {/* <Route path="/">
           <Home />
         </Route> */}
-        {/* <Route path="*">
-          <404 />
-        </Route> */}
+        <Route path="*">
+          <Page404 />
+        </Route>
         
       </Switch>
       <Footer />
