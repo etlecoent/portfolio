@@ -1,12 +1,15 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
+import Toggle from "./../components/Toggle"
+
 import logo from "../images/logo.png"
 
 const NavBar = (props) => {
   
   const [isOpen, setIsOpen] = useState(false);
-
+  const {darkMode, setDarkMode } = props;
+  console.log(darkMode)
   return (
     
     <nav className="bg-white shadow dark:bg-gray-800">
@@ -18,6 +21,9 @@ const NavBar = (props) => {
             </div>
             <div className="hidden md:block">
               <div className="ml-10 flex items-baseline space-x-4">
+                <div className="text-gray-300  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium">
+                  <Toggle state={darkMode} handleClick={() => setDarkMode(!darkMode)}/>
+                </div>
                 <Link to="/home">
                   <div className="text-gray-300  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium">
                     Home
@@ -53,6 +59,9 @@ const NavBar = (props) => {
       {isOpen && (
         <div className="md:hidden">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+            <div className="text-gray-300 hover:text-gray-800 dark:hover:text-white block px-3 py-2 rounded-md text-base font-medium">
+              <Toggle state={darkMode} handleClick={() => setDarkMode(!darkMode)}/>
+            </div>
             <Link to="/home">
               <div className="text-gray-300 hover:text-gray-800 dark:hover:text-white block px-3 py-2 rounded-md text-base font-medium">
                 Home
