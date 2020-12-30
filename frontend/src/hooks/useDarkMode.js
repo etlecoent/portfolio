@@ -5,12 +5,6 @@ const useDarkMode = () => {
   
   const [darkMode, setDarkMode] = useLocalStorage('darkMode', false);
 
-  // if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-  //   document.querySelector('html').classList.add('dark')
-  // } else {
-  //   document.querySelector('html').classList.remove('dark')
-  // }
-
   const enabled =
     typeof darkMode !== 'undefined' ? darkMode : false;
 
