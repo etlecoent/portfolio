@@ -20,7 +20,7 @@ const useDarkMode = () => {
     if (enabled) {
       element.classList.add("dark");
     } else {
-      element.classList.remove("light");
+      element.classList.remove("dark");
     }
   }, [enabled] // Only re-call effect when value changes
   );
