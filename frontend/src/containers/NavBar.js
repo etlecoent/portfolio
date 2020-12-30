@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import Toggle from "./../components/Toggle"
 
-import logo from "../images/logo.png"
+import logo from "../images/logo.png";
 
 const NavBar = (props) => {
   
