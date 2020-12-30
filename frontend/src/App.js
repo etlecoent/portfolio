@@ -5,6 +5,8 @@ import {
 } from "react-router-dom";
 
 import NavBar from "./containers/NavBar";
+import Footer from "./containers/Footer";
+
 
 function App() {
   return (
@@ -26,6 +28,7 @@ function App() {
         </Route> */}
         
       </Switch>
+      <Footer />
     </Router>
     </>
   );
