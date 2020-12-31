@@ -18,7 +18,7 @@ function App() {
   
   return (
     <>
-    <Router>
+    <Router basename="/portfolio">
       <NavBar darkMode={darkMode} setDarkMode={setDarkMode}/>
       <Switch>
         {/* <Route path="/">
