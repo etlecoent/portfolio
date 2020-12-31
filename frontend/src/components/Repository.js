@@ -57,7 +57,7 @@ const Repository = (props) => {
               <p className="text-gray-300 font-light text-md">
                   {description}
               </p>
-              <div className="flex justify-end">
+              <div className="flex justify-end text-gray-300">
                 {nbCommits} Commits
               </div>
               <footer className="border-t-2 flex justify-between mt-3 pt-2">
