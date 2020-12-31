@@ -2,40 +2,57 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 import Loading from "../components/Loading";
+import SearchBar from "../components/SearchBar";
+
 import Repository from "../components/Repository";
 
 
 const Projects = (props) => {
   
   const [repos, setRepos] = useState([]);
+  const [shownRepos, setShownRepos] = useState(repos);
   const [loading, setLoading] = useState(true);
 
+  const orderRepos = (repos) => {
+    return repos
+      .sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at))
+  }
+
   useEffect(() => {
+    
     axios.get("https://api.github.com/users/Deteri0n/repos")
       .then(res => {
-        setRepos(res.data);
+        const orderedRepos = orderRepos(res.data);
+        setRepos(orderedRepos);
+        setShownRepos(orderedRepos)
         setLoading(false); 
       })
       .catch(err => console.log(err))
   }, []);
 
-  const formatRepos = () => {
-    return repos
-      .sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at))
+  
+  const searchRepos = (term) => {
+    
+    if (term === "") {
+      setShownRepos(repos);
+    } else {
+      const filteredRepos = repos.filter(repo => repo.name.toLowerCase().includes(term.toLowerCase()))
+      setShownRepos(filteredRepos);
+    }
   }
 
   return (
-    <section className="h-full bg-ysosw dark:bg-ysosb shadow text-black dark:text-white">
-      {loading ? <Loading /> :
-        <div className="mx-auto py-8 px-8">
+    <section className="min-h-screen pt-16 bg-ysosw dark:bg-ysosb shadow text-black dark:text-white">
+      <div className="h-full mx-auto py-8 px-8">
+        <SearchBar onSearch={searchRepos}/>
+        {loading ? <Loading /> :
           <div className="flex items-center justify-between">
             <div className="w-full flex-wrap flex items-center">
-              {formatRepos().map((repo, index) => (<Repository key={index} data={repo}/>))
-              }
+              {shownRepos.map((repo, index) => (<Repository key={index} data={repo}/>))}
             </div>
           </div>
-        </div>
-      }
+        }
+      </div>
     </section>
   )
 };
