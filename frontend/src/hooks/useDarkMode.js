@@ -3,7 +3,7 @@ import { useLocalStorage } from "./useLocalStorage";
 
 const useDarkMode = () => {
   
-  const [darkMode, setDarkMode] = useLocalStorage('darkMode', false);
+  const [darkMode, setDarkMode] = useLocalStorage('darkMode', true);
 
   const enabled =
     typeof darkMode !== 'undefined' ? darkMode : false;
