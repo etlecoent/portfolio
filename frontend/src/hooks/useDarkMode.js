@@ -23,5 +23,5 @@ const useDarkMode = () => {
   return [darkMode, setDarkMode];
 };
 
-export { useDarkMode };
+export default  useDarkMode;
 

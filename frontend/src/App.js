@@ -4,7 +4,7 @@ import {
   Route,
 } from "react-router-dom";
 
-import { useDarkMode } from "./hooks/useDarkMode";
+import useDarkMode from "./hooks/useDarkMode";
 
 import NavBar from "./containers/NavBar";
 import Projects from "./containers/Projects";
