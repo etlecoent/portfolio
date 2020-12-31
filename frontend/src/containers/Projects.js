@@ -14,10 +14,15 @@ const Projects = (props) => {
     axios.get("https://api.github.com/users/Deteri0n/repos")
       .then(res => {
         setRepos(res.data);
-        setLoading(!loading); 
+        setLoading(false); 
       })
       .catch(err => console.log(err))
   }, []);
+
+  const formatRepos = () => {
+    return repos
+      .sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at))
+  }
 
   return (
     <section className="h-full bg-ysosw dark:bg-ysosb shadow text-black dark:text-white">
@@ -25,7 +30,8 @@ const Projects = (props) => {
         <div className="mx-auto py-8 px-8">
           <div className="flex items-center justify-between">
             <div className="w-full flex-wrap flex items-center">
-              {repos.map(repo => (<Repository data={repo}/>))}
+              {formatRepos().map((repo, index) => (<Repository key={index} data={repo}/>))
+              }
             </div>
           </div>
         </div>
