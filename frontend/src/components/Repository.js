@@ -1,3 +1,5 @@
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 import classNames from 'classnames';
 
 const Repository = (props) => {
@@ -7,8 +9,11 @@ const Repository = (props) => {
     html_url,
     created_at, 
     updated_at,
-    language
+    language,
+    contributors_url
   } = props.data;
+
+  const [nbCommits, setNbCommits] = useState(null);
 
   const formatedDate = (dateString) => {
     const formatedDate = new Date(dateString);
@@ -22,10 +27,21 @@ const Repository = (props) => {
     "bg-yellow-500": language === "HTML",
   });
 
+  useEffect(() => {
+    
+    axios.get(contributors_url)
+      .then(res => {
+        const user = res.data.filter((contributor => (contributor.login === "Deteri0n")));
+        const nbCommits = user.length ? user[0].contributions : 0;
+        setNbCommits(nbCommits);
+      })
+      .catch(err => console.log(err))
+  }, []);
+
   return (
     <div className="overflow-hidden shadow-lg rounded-lg h-90 w-80 cursor-pointer mx-auto my-5 relative border-white">
         <a href={html_url} className="w-full h-full z-30">
-          <div className="bg-gray-800 w-full p-4 relative">
+          <div className="bg-gray-700 w-full p-4 relative">
               <p className="text-indigo-500 text-md font-medium">
               </p>
               <div className="flex flex-row justify-between mb-2">
@@ -41,6 +57,9 @@ const Repository = (props) => {
               <p className="text-gray-300 font-light text-md">
                   {description}
               </p>
+              <div className="flex justify-end">
+                {nbCommits} Commits
+              </div>
               <footer className="border-t-2 flex justify-between mt-3 pt-2">
                 <div className="text-xs text-gray-300">Updated: {formatedDate(updated_at)}</div>
                 <div className="text-xs text-gray-300">Created: {formatedDate(created_at)}</div>
