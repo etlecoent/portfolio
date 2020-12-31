@@ -61,17 +61,17 @@ const NavBar = (props) => {
             <div className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
               <Toggle state={darkMode} handleClick={() => setDarkMode(!darkMode)}/>
             </div>
-            <Link to="/">
+            <Link to="/" onClick={() => setIsOpen(!isOpen)}>
               <div className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
                 Home
               </div>
             </Link>
-            <Link to="/projects">
+            <Link to="/projects" onClick={() => setIsOpen(!isOpen)}>
               <div className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
                 Projects
               </div>
             </Link>
-            <Link to="/reachout">
+            <Link to="/reachout" onClick={() => setIsOpen(!isOpen)}>
               <div className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
                 Reach Out
               </div>
