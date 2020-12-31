@@ -7,6 +7,7 @@ import {
 import useDarkMode from "./hooks/useDarkMode";
 
 import NavBar from "./containers/NavBar";
+import Home from "./containers/Home";
 import Projects from "./containers/Projects";
 import Page404 from "./containers/Page404";
 import Footer from "./containers/Footer";
@@ -21,9 +22,9 @@ function App() {
     <Router basename="/portfolio">
       <NavBar darkMode={darkMode} setDarkMode={setDarkMode}/>
       <Switch>
-        {/* <Route path="/">
+        <Route exact path="/">
           <Home />
-        </Route> */}
+        </Route>
         <Route path="/projects">
           <Projects />
         </Route>
