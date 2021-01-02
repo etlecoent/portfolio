@@ -39,9 +39,9 @@ const Repository = (props) => {
   }, []);
 
   return (
-    <div className="overflow-hidden shadow-lg rounded-lg h-90 w-80 cursor-pointer mx-auto my-5 relative border-white">
-        <a href={html_url} className="w-full h-full z-30">
-          <div className="bg-gray-700 w-full p-4 relative">
+    <div className=" h-90 w-80 mx-auto my-5 relative">
+        <a href={html_url} className="w-full h-full z-30 cursor-pointer">
+          <div className="transform transition hover:scale-110 bg-gray-700 w-full p-4 relative rounded-lg ">
               <p className="text-indigo-500 text-md font-medium">
               </p>
               <div className="flex flex-row justify-between mb-2">
