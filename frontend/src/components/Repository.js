@@ -11,7 +11,7 @@ const Repository = (props) => {
     updated_at,
     language,
     contributors_url
-  } = props.data;
+  } = props;
 
   const [nbCommits, setNbCommits] = useState(null);
 
