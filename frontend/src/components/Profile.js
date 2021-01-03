@@ -13,7 +13,7 @@ export default function Profile () {
         <img 
           alt="profile" 
           src={picture} 
-          className="rounded-lg" 
+          className="rounded-lg transition-all fade-in" 
           style={loaded ? {} : {display: 'none'}}
           onLoad={() => setLoaded(true)}
           />
