@@ -7,6 +7,10 @@
 
 # testing
 /coverage
+.storybook
+stories
+postcss.config.js 
+tailwind.css
 
 # production
 /build
