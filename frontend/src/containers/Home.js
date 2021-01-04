@@ -30,6 +30,7 @@ const Home = (props) => {
             <Tool src="https://cdn.svgporn.com/logos/javascript.svg" alt="Javascript (JS)" />
             <Tool src="https://cdn.svgporn.com/logos/react.svg" alt="React" />
             <Tool src="https://cdn.svgporn.com/logos/sass.svg" alt="Sass" />
+            <Tool src="https://cdn.svgporn.com/logos/tailwindcss-icon.svg" alt="Tailwind CSS" />
             <Tool src="https://cdn.svgporn.com/logos/figma.svg" alt="Figma" />
             <Tool src="https://cdn.iconscout.com/icon/free/png-256/jquery-10-1175155.png" alt="jQuery" />
           </p>
