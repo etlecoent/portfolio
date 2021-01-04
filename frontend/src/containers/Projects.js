@@ -19,7 +19,7 @@ const Projects = (props) => {
 
   useEffect(() => {
     
-    axios.get("https://api.github.com/users/Deteri0n/repos")
+    axios.get("https://api.github.com/users/Deteri0n/starred")
       .then(res => {
         const orderedRepos = orderRepos(res.data);
         setRepos(orderedRepos);
