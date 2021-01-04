@@ -1,7 +1,7 @@
 const Footer = (props) => {
 
   return (
-    <footer className="bg-gray-800 w-full py-4 shadow">
+    <footer className="bg-gray-800 w-full py-4">
       <div className="max-w-screen-xl mx-auto px-4">
         <div className="pt-4 flex mx-auto items-center justify-evenly">
           <a href="https://github.com/Deteri0n" className="text-gray-400">
