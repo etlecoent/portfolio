@@ -16,6 +16,7 @@ const Repository = (props) => {
   } = props;
 
   const [nbCommits, setNbCommits] = useState(null);
+  const [loaded, setLoaded] = useState(false);
 
   const formatedDate = (dateString) => {
     const formatedDate = new Date(dateString);
@@ -45,7 +46,13 @@ const Repository = (props) => {
     <div className="h-90 w-80 mx-auto my-10 relative rounded-lg cursor-pointer transition-all fade-in transform hover:scale-105">
         <a href={html_url} className="absolute w-full h-full z-30">
         </a>
-        <img alt="blog" src={image} className="rounded-t-lg max-h-32 w-full object-cover -mb-1"/>  
+        <img 
+          alt={name} 
+          src={image} 
+          style={loaded ? {} : {display: 'none'}}
+          onLoad={() => setLoaded(true)} 
+          className="rounded-t-lg max-h-32 w-full object-cover -mb-1"
+        />  
         <div className=" bg-gray-700 w-full p-4 relative rounded-b-lg">
             <div className="flex flex-row justify-between mb-2">
               <div className="text-white text-xl font-bold">
