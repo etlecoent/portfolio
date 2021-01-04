@@ -6,8 +6,22 @@ import SearchBar from "../components/SearchBar";
 
 import Repository from "../components/Repository";
 
+import lfgameImg from "../images/repos/enrique-vidal-flores-blhDTLTniZM-unsplash.jpg";
+import portfolioImg from "../images/repos/nordwood-themes-ubIWo074QlU-unsplash.jpg";
+import tweeterImg from "../images/repos/brett-jordan-ulRlAm1ITMU-unsplash.jpg";
+import schedulterImg from "../images/repos/eric-rothermel-FoKO4DpXamQ-unsplash.jpg";
+import myMapsImg from "../images/repos/t-h-chia-tVZMk-cidEc-unsplash.jpg";
+
 const Projects = (props) => {
   
+  const images = {
+    lfgame: lfgameImg,
+    portfolio: portfolioImg,
+    tweeter: tweeterImg,
+    scheduler: schedulterImg,
+    'My-Maps': myMapsImg
+  };
+
   const [repos, setRepos] = useState([]);
   const [shownRepos, setShownRepos] = useState(repos);
   const [loading, setLoading] = useState(true);
@@ -16,6 +30,7 @@ const Projects = (props) => {
     return repos
       .sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at))
   }
+
 
   useEffect(() => {
     
@@ -57,6 +72,7 @@ const Projects = (props) => {
                   updated_at = {repo.updated_at}
                   language = {repo.language}
                   contributors_url = {repo.contributors_url}
+                  image={images[repo.name]}
                 />)
               )}
             </div>
