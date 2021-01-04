@@ -57,21 +57,21 @@ const NavBar = (props) => {
     </div>
       {isOpen && (
         <div className="md:hidden origin-top transition-all growDown ">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3" onMouseLeave={() => setIsOpen(false)}>
             <div className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
               <Toggle state={darkMode} handleClick={() => setDarkMode(!darkMode)}/>
             </div>
-            <Link to="/" onClick={() => setIsOpen(!isOpen)}>
+            <Link to="/">
               <div className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
                 Home
               </div>
             </Link>
-            <Link to="/projects" onClick={() => setIsOpen(!isOpen)}>
+            <Link to="/projects">
               <div className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
                 Projects
               </div>
             </Link>
-            <Link to="/reachout" onClick={() => setIsOpen(!isOpen)}>
+            <Link to="/reachout">
               <div className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
                 Reach Out
               </div>
