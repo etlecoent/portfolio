@@ -7,10 +7,10 @@ const Home = (props) => {
     <section className="min-h-screen pt-16 bg-ysosw dark:bg-ysosb text-black dark:text-white">
       <div className="flex flex-col min-h-screen mx-auto py-8 px-8">
 
-        <div className = "flex flex-row flex-wrap justify-around">
+        <div className = "flex flex-row flex-wrap justify-around py-8">
           <Profile />
           <div className=" flex flex-col items-center justify-center h-auto w-auto">
-            <h1 className="max-w-full text-center text-4xl font-bold pb-10">
+            <h1 className="max-w-full text-center text-4xl font-bold py-10">
               M.Eng & Full-Stack Dev
             </h1>
               <p className = "text-center max-w-md">
