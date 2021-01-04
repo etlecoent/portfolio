@@ -45,7 +45,7 @@ const Repository = (props) => {
               <p className="text-indigo-500 text-md font-medium">
               </p>
               <div className="flex flex-row justify-between mb-2">
-                <div className="text-white text-xl font-medium">
+                <div className="text-white text-xl font-bold">
                     {name}
                 </div>
                 {language && 
@@ -57,7 +57,7 @@ const Repository = (props) => {
               <p className="text-gray-300 font-light text-md">
                   {description}
               </p>
-              <div className="flex justify-end text-gray-300">
+              <div className="flex justify-end text-gray-300 mt-2 font-medium">
                 {nbCommits} Commits
               </div>
               <footer className="border-t-2 flex justify-between mt-3 pt-2">
