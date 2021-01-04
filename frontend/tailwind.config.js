@@ -22,6 +22,7 @@ module.exports = {
       borderColor: ["checked"],
       inset: ["checked"],
       zIndex: ["hover", "active"],
+      translate: ['checked']
     },
   },
   plugins: [],
