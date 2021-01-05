@@ -6,7 +6,7 @@ export default function Tools(props) {
 
     <div className = "flex flex-col align-center justify-center width-full h-auto pt-16">
       <h1 className="flex flex-row justify-center items-center max-w-full text-center text-4xl font-bold pb-10">
-        <div className="tilt">
+        <div className="tilt mr-2">
           🛠️ 
         </div>
         My tools:
