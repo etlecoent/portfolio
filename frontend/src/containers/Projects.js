@@ -6,7 +6,7 @@ import SearchBar from "../components/SearchBar";
 
 import Repository from "../components/Repository";
 
-import lfgameImg from "../images/repos/enrique-vidal-flores-blhDTLTniZM-unsplash.jpg";
+import lfgameImg from "../images/repos/caleb-woods-fpmV3dQPUvU-unsplash.jpg";
 import portfolioImg from "../images/repos/nordwood-themes-ubIWo074QlU-unsplash.jpg";
 import tweeterImg from "../images/repos/brett-jordan-ulRlAm1ITMU-unsplash.jpg";
 import schedulterImg from "../images/repos/eric-rothermel-FoKO4DpXamQ-unsplash.jpg";
