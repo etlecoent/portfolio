@@ -35,6 +35,7 @@ export default function Tools(props) {
 
       <h2 className="max-w-full text-center text-2xl font-bold pb-8">Testing/Other</h2>
       <p className="flex flex-wrap flex-row max-w-full justify-center items-center pb-8">
+        <ToolItem href="https://code.visualstudio.com/" src="https://cdn.svgporn.com/logos/visual-studio-code.svg" alt="VSCode" />
         <ToolItem href="https://git-scm.com/" src="https://cdn.svgporn.com/logos/git-icon.svg" alt="Git" />
         <ToolItem href="https://www.npmjs.com/" src="https://cdn.svgporn.com/logos/npm-icon.svg" alt="NPM" />
         <ToolItem href="https://www.cypress.io/" src="https://cdn.svgporn.com/logos/cypress.svg" alt="Cypress" />
