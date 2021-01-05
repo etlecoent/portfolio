@@ -8,7 +8,7 @@ export default function Tool(props) {
 
   return (
     
-    <a href={href}>
+    <a href={href} target="_blanck" rel="noopener noreferrer">
       <img
         src={src}
         alt={alt}
