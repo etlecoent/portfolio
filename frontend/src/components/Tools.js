@@ -33,9 +33,10 @@ export default function Tools(props) {
         <ToolItem href="https://rubyonrails.org/" src="https://camo.githubusercontent.com/d8c59366e8967f17d0b7585b9a2b6e66560776afb91758bfcf955ec0c1bf5b7a/68747470733a2f2f7777772e796179612e746f6461792f696d672f726566657272616c2f546563686e6f6c6f676965732f746563685f727562796f6e7261696c732e706e67" alt="Rails" />
       </p>
 
-      <h2 className="max-w-full text-center text-2xl font-bold pb-8">Other</h2>
+      <h2 className="max-w-full text-center text-2xl font-bold pb-8">Testing/Other</h2>
       <p className="flex flex-wrap flex-row max-w-full justify-center items-center pb-8">
         <ToolItem href="https://git-scm.com/" src="https://cdn.svgporn.com/logos/git-icon.svg" alt="Git" />
+        <ToolItem href="https://www.npmjs.com/" src="https://cdn.svgporn.com/logos/npm-icon.svg" alt="NPM" />
         <ToolItem href="https://www.cypress.io/" src="https://cdn.svgporn.com/logos/cypress.svg" alt="Cypress" />
         <ToolItem href="https://storybook.js.org/" src="https://cdn.svgporn.com/logos/storybook-icon.svg" alt="Storybook" />
         <ToolItem href="https://jestjs.io/" src="https://cdn.svgporn.com/logos/jest.svg" alt="Jest" />
