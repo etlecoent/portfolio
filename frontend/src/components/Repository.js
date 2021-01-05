@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import classNames from 'classnames';
 
+import Loading from "./Loading";
+
 const Repository = (props) => {
     
   const {
@@ -16,7 +18,7 @@ const Repository = (props) => {
   } = props;
 
   const [nbCommits, setNbCommits] = useState(null);
-  const [loaded, setLoaded] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
 
   const formatedDate = (dateString) => {
     const formatedDate = new Date(dateString);
@@ -48,11 +50,11 @@ const Repository = (props) => {
         </a>
         <img 
           alt={name} 
-          src={image} 
-          style={loaded ? {} : {display: 'none'}}
-          onLoad={() => setLoaded(true)} 
-          className="rounded-t-lg max-h-32 w-full object-cover -mb-1"
-        />  
+          src={image}
+          style={{opacity: isLoaded ? 1 : 0}}
+          onLoad={() => setIsLoaded(true)} 
+          className="object-cover rounded-t-lg max-h-32 w-full -mb-1"
+        />
         <div className=" bg-gray-700 w-full p-4 relative rounded-b-lg">
             <div className="flex flex-row justify-between mb-2">
               <div className="text-white text-xl font-bold">
