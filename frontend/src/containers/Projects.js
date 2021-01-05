@@ -5,6 +5,7 @@ import Loading from "../components/Loading";
 import SearchBar from "../components/SearchBar";
 
 import Repository from "../components/Repository";
+import Error from "../components/Error";
 
 import lfgameImg from "../images/repos/caleb-woods-fpmV3dQPUvU-unsplash.jpg";
 import portfolioImg from "../images/repos/nordwood-themes-ubIWo074QlU-unsplash.jpg";
@@ -24,7 +25,8 @@ const Projects = (props) => {
 
   const [repos, setRepos] = useState([]);
   const [shownRepos, setShownRepos] = useState(repos);
-  const [loading, setLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
+  const [isError, setIsError] = useState(false);
 
   const orderRepos = (repos) => {
     return repos
@@ -39,9 +41,13 @@ const Projects = (props) => {
         const orderedRepos = orderRepos(res.data);
         setRepos(orderedRepos);
         setShownRepos(orderedRepos)
-        setLoading(false); 
+        setIsLoading(false); 
       })
-      .catch(err => console.log(err))
+      .catch(err => {
+        console.log(err);
+        setIsLoading(null);
+        setIsError(true);
+      })
   }, []);
 
   
@@ -58,25 +64,29 @@ const Projects = (props) => {
   return (
     <section className="min-h-screen pt-16 bg-ysosw dark:bg-ysosb text-black dark:text-white">
       <div className="h-full mx-auto py-8 px-8">
-        <SearchBar onSearch={searchRepos}/>
-        {loading ? <Loading /> :
-          <div className="flex items-center justify-between">
-            <div className="w-full flex-wrap flex items-center">
-              {shownRepos.map((repo, index) => (
-                <Repository 
-                  key={index} 
-                  name = {repo.name}
-                  description = {repo.description}
-                  html_url = {repo.html_url}
-                  created_at = {repo.created_at} 
-                  updated_at = {repo.updated_at}
-                  language = {repo.language}
-                  contributors_url = {repo.contributors_url}
-                  image={images[repo.name]}
-                />)
-              )}
-            </div>
-          </div>
+        {isError ? <Error /> :
+          <>
+            <SearchBar onSearch={searchRepos}/>
+            {isLoading ? <Loading /> :
+              <div className="flex items-center justify-between">
+                <div className="w-full flex-wrap flex items-center">
+                  {shownRepos.map((repo, index) => (
+                    <Repository 
+                      key={index} 
+                      name = {repo.name}
+                      description = {repo.description}
+                      html_url = {repo.html_url}
+                      created_at = {repo.created_at} 
+                      updated_at = {repo.updated_at}
+                      language = {repo.language}
+                      contributors_url = {repo.contributors_url}
+                      image={images[repo.name]}
+                    />)
+                  )}
+                </div>
+              </div>
+            }
+          </>
         }
       </div>
     </section>
