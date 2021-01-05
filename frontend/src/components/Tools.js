@@ -5,7 +5,12 @@ export default function Tools(props) {
   return (
 
     <div className = "flex flex-col align-center justify-center width-full h-auto pt-16">
-      <h1 className="max-w-full text-center text-4xl font-bold pb-10">🛠️ My tools:</h1>
+      <h1 className="flex flex-row justify-center items-center max-w-full text-center text-4xl font-bold pb-10">
+        <div className="tilt">
+          🛠️ 
+        </div>
+        My tools:
+      </h1>
       
       <h2 className="max-w-full text-center text-2xl font-bold pb-8">Front-End</h2>
       <p className="flex flex-wrap flex-row max-w-full justify-center items-center pb-8">

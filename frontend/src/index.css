@@ -27,3 +27,25 @@
 		transform: scaleY(1);
 	}
 }
+
+.tilt {
+	animation: tilt 7s ease-in-out infinite;
+}
+
+@keyframes tilt {
+	0% {
+		transform: rotateZ(0deg);
+	}
+	15% {
+		transform: rotateZ(-45deg);
+	}
+	35% {
+		transform: rotateZ(45deg);
+	}
+	45% {
+		transform: rotateZ(0deg);
+	}
+	100% {
+		transform: rotateZ(0deg);
+	}
+}
