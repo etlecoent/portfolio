@@ -11,22 +11,28 @@ export default function MyForm(props) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  const [status, setStatus] = useState("");
+  const [alert, setAlert] = useState({status:"", content:""});
 
   const validate = () => {
-    if (!email) {
-      setStatus("Email cannot be blank");
+    setAlert({status:"", content:""});
+    if (!name) {
+      setAlert({status:"error", content:"Name cannot be blank"});
+      return;
+    } else if (!email) {
+      setAlert({status:"error", content:"Email cannot be blank"});
       return;
     } else if (!message) {
-      setStatus("message cannot be blank");
+      setAlert({status:"error", content:"message cannot be blank"});
       return;
     } else {
-      setStatus("");
       sendForm(email, message)
         .then(res => {
-          setStatus("Email sent, I will contact you ASAP!")
+          setAlert({status:"succes", content:"Email sent, I will contact you ASAP!"});
+          setName("");
+          setEmail("");
+          setMessage("");
         })
-        .catch(err => setStatus("Ooops! Something went wrong."));
+        .catch(err => setAlert({status:"error", content:"Ooops! Something went wrong."}));
     }
   }
 
@@ -44,10 +50,19 @@ export default function MyForm(props) {
 
   return(
 
-    <div className="min-h-screen mx-auto py-8 px-8 flex flex-col justify-center items-center">
-      {status && 
-        <div>
-          {status}
+    <div className="min-h-screen mx-auto py-8 px-8 flex flex-col justify-center items-center fade-in">
+      {alert.status === "error" && 
+        <div className="border-red-600 text-red-600 border-l-4 p-4 growDown" role="alert">
+          <p className="font-bold">
+            {alert.content}
+          </p>
+        </div>
+      }
+      {alert.status === "success" && 
+        <div className="border-green-600 text-green-600 border-l-4 p-4 growDown" role="alert">
+          <p className="font-bold">
+            {alert.content}
+          </p>
         </div>
       }
         
@@ -67,7 +82,7 @@ export default function MyForm(props) {
                     onChange={ev => setName(ev.target.value)}
                     type="text"
                     name="name"
-                    placeholder="Name"
+                    placeholder="Name*"
                     className="rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
                     />
               </div>
@@ -80,7 +95,7 @@ export default function MyForm(props) {
                   onChange={ev => setEmail(ev.target.value)}
                   type="email"
                   name="email"
-                  placeholder="ex@mple.com"
+                  placeholder="ex@mple.com*"
                   className="rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
                 />
               </div>
@@ -95,7 +110,7 @@ export default function MyForm(props) {
                   name="message"
                   type="text"
                   id="message"
-                  placeholder="Enter your message"
+                  placeholder="Enter your message*"
                   rows="5"
                   cols="40">
                 </textarea>
