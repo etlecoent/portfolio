@@ -39,12 +39,10 @@ export default function MyForm(props) {
   const sendForm = (email, message) => {
     return axios
       .post(url, {
-        header: {Accept: 'application/json'},
-        data : {
-          'email': email,
-          'name': name,
-          'message': message
-        }
+        
+        'email': email,
+        'name': name,
+        'message': message
       })
   }
 
