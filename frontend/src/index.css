@@ -36,13 +36,16 @@
 	0% {
 		transform: rotateZ(0deg);
 	}
-	15% {
+	10% {
 		transform: rotateZ(-45deg);
 	}
-	35% {
-		transform: rotateZ(45deg);
+	30% {
+		transform: rotateZ(35deg);
 	}
-	45% {
+	50% {
+		transform: rotateZ(-25deg);
+	}
+	70% {
 		transform: rotateZ(0deg);
 	}
 	100% {
