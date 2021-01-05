@@ -14,7 +14,7 @@ export default function MyForm(props) {
   const [alert, setAlert] = useState({status:"", content:""});
 
   const validate = () => {
-    setAlert({status:"", content:""});
+    
     if (!name) {
       setAlert({status:"error", content:"Name cannot be blank"});
       return;
@@ -27,7 +27,7 @@ export default function MyForm(props) {
     } else {
       sendForm(email, message)
         .then(res => {
-          setAlert({status:"succes", content:"Email sent, I will contact you ASAP!"});
+          setAlert({status:"success", content:"Email sent, I will contact you ASAP!"});
           setName("");
           setEmail("");
           setMessage("");
