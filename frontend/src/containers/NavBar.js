@@ -4,6 +4,7 @@ import Toggle from "./../components/Toggle";
 import NavBarItem from "./../components/NavBarItem";
 
 import logo from "../images/logo.png";
+import { Link } from "react-router-dom";
 
 const NavBar = (props) => {
   
@@ -16,7 +17,9 @@ const NavBar = (props) => {
         <div className="flex items-center justify-between h-16">
           <div className="w-full justify-between flex items-center">
             <div className="flex-shrink-0">
-              <img className="h-10" src={logo} alt="logo"/>
+              <Link to="/">
+                <img  className="h-12" src={logo} alt="logo"/>
+              </Link>
             </div>
             <div className="hidden md:block">
               <div className="ml-10 flex items-center space-x-4">
