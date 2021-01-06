@@ -50,14 +50,14 @@ export default function MyForm(props) {
 
     <div className="min-h-screen mx-auto py-8 px-8 flex flex-col justify-center items-center fade-in">
       {alert.status === "error" && 
-        <div className="border-red-600 text-red-600 border-l-4 p-4 growDown" role="alert">
+        <div className="border-red-600 text-red-600 border-l-4 p-4 m-4 growDown" role="alert">
           <p className="font-bold">
             {alert.content}
           </p>
         </div>
       }
       {alert.status === "success" && 
-        <div className="border-green-600 text-green-600 border-l-4 p-4 growDown" role="alert">
+        <div className="border-green-600 text-green-600 border-l-4 p-4 m-4 growDown" role="alert">
           <p className="font-bold">
             {alert.content}
           </p>
