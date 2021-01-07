@@ -9,7 +9,7 @@ export default function Profile () {
 
   return (
     
-    <div className="overflow-hidden shadow-lg rounded-lg relative w-64">
+    <div className="overflow-hidden shadow-lg rounded-lg relative w-64 lg:w-80">
         <img 
           alt="profile" 
           src={picture} 
