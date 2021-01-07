@@ -2,8 +2,6 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import classNames from 'classnames';
 
-import Loading from "./Loading";
-
 const Repository = (props) => {
     
   const {
