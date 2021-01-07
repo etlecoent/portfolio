@@ -43,7 +43,7 @@ const Repository = (props) => {
   }, []);
 
   return (
-    <div className="h-90 w-80 mx-auto my-10 relative rounded-lg cursor-pointer transition-all fade-in transform hover:scale-105">
+    <div className="h-90 w-80 mx-10 my-10 relative rounded-lg cursor-pointer transition-all fade-in transform hover:scale-105">
         <a href={html_url} target="_blanck" rel="noopener noreferrer" className="absolute w-full h-full z-30">
         </a>
         <img 

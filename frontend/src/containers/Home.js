@@ -5,7 +5,7 @@ const Home = (props) => {
 
   return (
     <section className="min-h-screen pt-16 bg-ysosw dark:bg-ysosb text-black dark:text-white">
-      <div className="flex flex-col min-h-screen mx-auto py-8 px-8">
+      <div className="container flex flex-col min-h-screen mx-auto py-8 px-8">
 
         <div className = "flex flex-row flex-wrap justify-around py-8">
           <Profile />

@@ -48,7 +48,7 @@ export default function MyForm(props) {
 
   return(
 
-    <div className="min-h-screen mx-auto py-8 px-8 flex flex-col justify-center items-center fade-in">
+    <div className="container min-h-screen mx-auto py-8 px-8 flex flex-col justify-center items-center fade-in">
       {alert.status === "error" && 
         <div className="border-red-600 text-red-600 border-l-4 p-4 m-4 growDown" role="alert">
           <p className="font-bold">

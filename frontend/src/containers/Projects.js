@@ -63,27 +63,25 @@ const Projects = (props) => {
 
   return (
     <section className="min-h-screen pt-16 bg-ysosw dark:bg-ysosb text-black dark:text-white">
-      <div className="h-full mx-auto py-8 px-8">
+      <div className="container h-full mx-auto py-8 px-8">
         {isError ? <Error message={"Oops, something went wrong"}/> :
           <>
             <SearchBar onSearch={searchRepos}/>
             {isLoading ? <Loading /> :
-              <div className="flex items-center justify-between">
-                <div className="w-full flex-wrap flex items-center">
-                  {shownRepos.map((repo, index) => (
-                    <Repository 
-                      key={index} 
-                      name = {repo.name}
-                      description = {repo.description}
-                      html_url = {repo.html_url}
-                      created_at = {repo.created_at} 
-                      updated_at = {repo.updated_at}
-                      language = {repo.language}
-                      contributors_url = {repo.contributors_url}
-                      image={images[repo.name]}
-                    />)
-                  )}
-                </div>
+              <div className="flex w-full flex-wrap items-center justify-evenly">
+                {shownRepos.map((repo, index) => (
+                  <Repository 
+                    key={index} 
+                    name = {repo.name}
+                    description = {repo.description}
+                    html_url = {repo.html_url}
+                    created_at = {repo.created_at} 
+                    updated_at = {repo.updated_at}
+                    language = {repo.language}
+                    contributors_url = {repo.contributors_url}
+                    image={images[repo.name]}
+                  />)
+                )}
               </div>
             }
           </>
