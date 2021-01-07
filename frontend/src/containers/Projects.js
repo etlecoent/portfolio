@@ -63,7 +63,7 @@ const Projects = (props) => {
 
   return (
     <section className="min-h-screen pt-16 bg-ysosw dark:bg-ysosb text-black dark:text-white">
-      <div className="container h-full mx-auto py-8 px-8">
+      <div className="container fade-in h-full mx-auto py-8 px-8">
         {isError ? <Error message={"Oops, something went wrong"}/> :
           <>
             <SearchBar onSearch={searchRepos}/>
