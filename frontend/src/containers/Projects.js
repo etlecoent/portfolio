@@ -63,12 +63,12 @@ const Projects = (props) => {
 
   return (
     <section className="min-h-screen pt-16 bg-ysosw dark:bg-ysosb text-black dark:text-white">
-      <div className="container fade-in h-full mx-auto py-8 px-8">
+      <div className="container min-h-screen flex flex-col items-center justify-evenly fade-in h-full mx-auto p-8">
         {isError ? <Error message={"Oops, something went wrong"}/> :
           <>
             <SearchBar onSearch={searchRepos}/>
             {isLoading ? <Loading /> :
-              <div className="flex w-full flex-wrap items-center justify-evenly">
+              <div className="flex h-full w-full flex-wrap items-center justify-evenly">
                 {shownRepos.map((repo, index) => (
                   <Repository 
                     key={index} 
