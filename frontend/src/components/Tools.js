@@ -4,7 +4,7 @@ export default function Tools(props) {
 
   return (
 
-    <div className = "flex flex-col align-center justify-center width-full h-auto pt-16">
+    <div className = "flex flex-col align-center justify-center width-full h-auto py-8">
       <h1 className="flex flex-row justify-center items-center max-w-full text-center text-4xl font-bold pb-10">
         <div className="tilt mr-2">
           🛠️ 
