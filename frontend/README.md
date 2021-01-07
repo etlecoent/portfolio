@@ -31,6 +31,8 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 
 - [Github's API](https://docs.github.com/en/free-pro-team@latest/rest) for repos' infos
 
+- [Github Pages](https://pages.github.com/) for hosting
+
 - [Unsplash](https://unsplash.com/) for images
 
 ### Dependencies
