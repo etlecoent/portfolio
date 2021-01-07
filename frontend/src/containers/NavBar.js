@@ -78,7 +78,7 @@ const NavBar = (props) => {
     </div>
       {isOpen && (
         <div className="md:hidden origin-top transition-all growDown ">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3" onMouseLeave={() => setIsOpen(false)}>
+          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 cursor-pointer" onMouseLeave={() => setIsOpen(false)}>
             <div className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">
               <Toggle state={darkMode} handleClick={() => setDarkMode(!darkMode)}/>
             </div>
