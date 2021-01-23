@@ -1,8 +1,12 @@
+import { useEffect } from "react";
 import {
   BrowserRouter as Router,
   Switch,
   Route,
+  useHistory
 } from "react-router-dom";
+
+import ReactGA from 'react-ga';
 
 import useDarkMode from "./hooks/useDarkMode";
 
@@ -17,10 +21,17 @@ import Footer from "./containers/Footer";
 function App() {
   
   const [darkMode, setDarkMode] = useDarkMode();
+  const history = useHistory();
+
+  useEffect(() => {
+    ReactGA.initialize('G-2GG3ZMK1KL');
+    ReactGA.set({ page: history.location.pathname }); // Update the user's current page
+    ReactGA.pageview(history.location.pathname); // Record a pageview for the given page
+  }, [history]);
   
   return (
     <>
-    <Router basename="/portfolio">
+    <Router basename="/portfolio" history={history}>
       <NavBar darkMode={darkMode} setDarkMode={setDarkMode}/>
       <Switch>
         <Route exact path="/">
