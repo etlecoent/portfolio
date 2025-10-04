@@ -1,6 +1,6 @@
 # Welcome to my portfolio's repo
 
-## Go check it out : [deteri0n](https://deteri0n.github.io/portfolio/)
+## Go check it out : [Etienne Le Coent](https://etlecoent.github.io/portfolio/)
 
 
 ## [Front End repo](https://github.com/Deteri0n/portfolio/tree/master/frontend)
