@@ -11,7 +11,7 @@ const MENU_ITEMS = [
 
 export default function NavBar() {
   return (
-    <AppBar position='static'>
+    <AppBar position='sticky' component='nav'>
       <Toolbar>
         <Box>
           {MENU_ITEMS.map(({ label, href }) => (
