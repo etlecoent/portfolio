@@ -1,7 +1,9 @@
+import Container from '@mui/material/Container';
+
 export default function Footer() {
   return (
-    <footer>
+    <Container component='footer'>
       <p>© 2024 My Portfolio</p>
-    </footer>
+    </Container>
   );
 }
