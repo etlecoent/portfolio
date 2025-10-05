@@ -3,6 +3,7 @@ import { Roboto } from 'next/font/google';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
 import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
+import { Container } from '@mui/material';
 
 import NavBar from '@/components/NavBar';
 import Footer from '@/components/Footer';
@@ -33,7 +34,7 @@ export default function RootLayout({
           <ThemeProvider theme={theme}>
             <CssBaseline />
             <NavBar />
-            {children}
+            <Container sx={{ mt: 4, mb: 4 }}>{children}</Container>
             <Footer />
           </ThemeProvider>
         </AppRouterCacheProvider>
