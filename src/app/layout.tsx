@@ -18,8 +18,8 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-  title: 'Etlecoent',
-  description: 'Etlecoent Website',
+  title: 'Etienne LC - Portfolio',
+  description: 'Etienne LC Portfolio Website',
   icons: {
     icon: '/logo.png'
   }
