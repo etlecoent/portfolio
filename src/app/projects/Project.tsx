@@ -13,7 +13,7 @@ export default function Project({ project }: { project: Project }) {
   return (
     <Card raised>
       <CardHeader
-        avatar={<FolderSpecialIcon fontSize='large' />}
+        avatar={<FolderSpecialIcon fontSize='large' color='primary' />}
         title={
           <Typography noWrap variant='h5'>
             {project.name}
@@ -25,7 +25,7 @@ export default function Project({ project }: { project: Project }) {
       </CardContent>
       <CardAction>
         <IconButton href={project.html_url} target='_blank' rel='noopener'>
-          <LinkIcon />
+          <LinkIcon color='secondary' />
         </IconButton>
       </CardAction>
     </Card>
