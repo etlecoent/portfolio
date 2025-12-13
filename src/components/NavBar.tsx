@@ -7,9 +7,10 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Typography } from '@mui/material';
 
-const MENU_ITEMS = [
+const MENU_ITEMS: { label: string; href: string }[] = [
   { label: 'Home', href: '/' },
-  { label: 'Projects', href: '/projects' }
+  { label: 'Projects', href: '/projects' },
+  { label: 'Contact', href: '/contact' }
 ];
 
 export default function NavBar() {
@@ -23,8 +24,8 @@ export default function NavBar() {
         </Box>
         {MENU_ITEMS.map(({ label, href }) => (
           <Box key={label}>
-            <Button color='primary' href={href} LinkComponent={Link}>
-              <Typography variant='body1'>{label}</Typography>
+            <Button href={href} LinkComponent={Link}>
+              <Typography color='textPrimary'>{label}</Typography>
             </Button>
           </Box>
         ))}
