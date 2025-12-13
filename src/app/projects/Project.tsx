@@ -11,7 +11,10 @@ import LinkIcon from '@mui/icons-material/Link';
 
 export default function Project({ project }: { project: Project }) {
   return (
-    <Card raised>
+    <Card
+      raised
+      sx={{ display: 'flex', flexDirection: 'column', height: '100%' }}
+    >
       <CardHeader
         avatar={<FolderSpecialIcon fontSize='large' color='primary' />}
         title={
@@ -20,7 +23,7 @@ export default function Project({ project }: { project: Project }) {
           </Typography>
         }
       />
-      <CardContent>
+      <CardContent sx={{ flex: 1 }}>
         <Typography variant='body1'>{project.description}</Typography>
       </CardContent>
       <CardAction>
