@@ -1,4 +1,8 @@
+'use client';
+
 import type { Project as ProjectType } from '@/types/Project';
+
+import { useState, useEffect, use } from 'react';
 import Grid from '@mui/material/Grid';
 import { Typography } from '@mui/material';
 
@@ -6,12 +10,18 @@ import Project from './Project';
 import { GITHUB_PROFILE } from '@/config';
 
 export default async function Projects() {
-  const data = await fetch(
-    `https://api.github.com/users/${GITHUB_PROFILE}/starred`,
-    { cache: 'force-cache' }
-  );
-  let projects: ProjectType[] = await data.json();
-  projects = projects.filter((p) => p.owner.login === GITHUB_PROFILE);
+  const [projects, setProjects] = useState<ProjectType[]>([]);
+
+  useEffect(() => {
+    fetch(`https://api.github.com/users/${GITHUB_PROFILE}/starred`, {
+      cache: 'force-cache'
+    })
+      .then((res) => res.json())
+      .then((data: ProjectType[]) => {
+        const projects = data.filter((p) => p.owner.login === GITHUB_PROFILE);
+        setProjects(projects);
+      });
+  }, []);
 
   return (
     <>
