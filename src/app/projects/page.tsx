@@ -1,15 +1,13 @@
-'use client';
-
 import type { Project as ProjectType } from '@/types/Project';
 
-import { useState, useEffect, use } from 'react';
+import { useState, useEffect } from 'react';
 import Grid from '@mui/material/Grid';
 import { Typography } from '@mui/material';
 
 import Project from './Project';
 import { GITHUB_PROFILE } from '@/config';
 
-export default async function Projects() {
+export default function Projects() {
   const [projects, setProjects] = useState<ProjectType[]>([]);
 
   useEffect(() => {
