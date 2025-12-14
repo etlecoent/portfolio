@@ -19,7 +19,12 @@ export default function NavBar() {
       <Toolbar>
         <Box>
           <IconButton disabled>
-            <Image src='/logo.png' alt='logo' width={50} height={50} />
+            <Image
+              src='/portfolio/logo.png'
+              alt='logo'
+              width={50}
+              height={50}
+            />
           </IconButton>
         </Box>
         {MENU_ITEMS.map(({ label, href }) => (

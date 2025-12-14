@@ -19,7 +19,11 @@ export default function Home() {
             height: 325
           }}
         >
-          <Image src='/profile_picture.jpg' alt='profile-pricture' fill />
+          <Image
+            src='/portfolio/profile_picture.jpg'
+            alt='profile-picture'
+            fill
+          />
         </Avatar>
       </Grid>
       <Grid size={{ xs: 4, sm: 4 }}>

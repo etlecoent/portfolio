@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   title: 'Etienne LC - Portfolio',
   description: 'Etienne LC Portfolio Website',
   icons: {
-    icon: '/logo.png'
+    icon: '/portfolio/logo.png'
   }
 };
 
