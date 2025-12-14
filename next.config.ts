@@ -2,10 +2,9 @@ import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
   output: 'export',
-  logging: {
-    fetches: {
-      fullUrl: true
-    }
+  basePath: '/portfolio',
+  images: {
+    unoptimized: true
   }
 };
 
