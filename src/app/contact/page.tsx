@@ -6,13 +6,9 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import EmailIcon from '@mui/icons-material/Email';
 import Link from '@mui/material/Link';
 
-export default function Contact({
-  email = '',
-  linkedin = ''
-}: {
-  email: string;
-  linkedin: string;
-}) {
+import { EMAIL, LINKEDIN_PROFILE } from '@/config';
+
+export default function Contact() {
   return (
     <Grid container spacing={4} columns={{ xs: 4, sm: 8 }}>
       <Grid
@@ -37,7 +33,7 @@ export default function Contact({
 
         <Box display='flex' gap={2} justifyContent='center'>
           <Link
-            href={`https://www.linkedin.com/in/${linkedin}`}
+            href={`https://www.linkedin.com/in/${LINKEDIN_PROFILE}`}
             target='_blank'
             rel='noopener noreferrer'
             aria-label='LinkedIn'
@@ -47,7 +43,7 @@ export default function Contact({
             </IconButton>
           </Link>
 
-          <Link href={`mailto:${email}`} aria-label='Email'>
+          <Link href={`mailto:${EMAIL}`} aria-label='Email'>
             <IconButton size='large' color='primary'>
               <EmailIcon fontSize='large' />
             </IconButton>

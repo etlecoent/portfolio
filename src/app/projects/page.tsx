@@ -1,11 +1,9 @@
 import type { Project as ProjectType } from '@/types/Project';
-
 import Grid from '@mui/material/Grid';
-
-import Project from './Project';
 import { Typography } from '@mui/material';
 
-const GITHUB_PROFILE = process.env.GITHUB_PROFILE!;
+import Project from './Project';
+import { GITHUB_PROFILE } from '@/config';
 
 export default async function Projects() {
   const data = await fetch(

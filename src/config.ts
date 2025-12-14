@@ -1,0 +1,5 @@
+const GITHUB_PROFILE = process.env.NEXT_PUBLIC_GITHUB_PROFILE || '';
+const EMAIL = process.env.NEXT_PUBLIC_EMAIL || '';
+const LINKEDIN_PROFILE = process.env.NEXT_PUBLIC_LINKEDIN_PROFILE || '';
+
+export { GITHUB_PROFILE, EMAIL, LINKEDIN_PROFILE };
