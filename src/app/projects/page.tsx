@@ -1,3 +1,5 @@
+'use client';
+
 import type { Project as ProjectType } from '@/types/Project';
 
 import { useState, useEffect } from 'react';
