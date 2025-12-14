@@ -24,7 +24,7 @@ export default function Home() {
       </Grid>
       <Grid size={{ xs: 4, sm: 4 }}>
         <Typography variant='h4' gutterBottom>
-          M.Eng & Full-Stack Developer
+          M.Eng & Full-Stack Developer & Data
         </Typography>
         <Typography variant='body1'>
           Curious about technology since my childhood, I chose to become a
